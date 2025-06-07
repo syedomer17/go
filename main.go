@@ -2,6 +2,21 @@ package main
 
 import "fmt"
 
+func greet(name string)  {
+		fmt.Println("Hello:",name)
+	}
+
+func add(a int, b int) int{
+	return a + b
+}
+
+func divide(a, b int) (int, error) {
+    if b == 0 {
+        return 0, fmt.Errorf("❌ Cannot divide by zero")
+    }
+    return a / b, nil
+}
+
 func main(){
 	fmt.Println("Hello,Go is working!")
 
@@ -41,5 +56,17 @@ func main(){
 		}else {
 			fmt.Println(1)
 		}
+	}
+	greet("omer")
+	greet("go devloper")
+
+	result := add(10,20)
+	fmt.Println("sum:",result)
+
+	res, err :=  divide(10,0)
+	if err != nil {
+		fmt.Println("Error:",err)
+	}else {
+		fmt.Println("Result:",res)
 	}
 }
