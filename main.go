@@ -1,126 +1,139 @@
-// package main
+package main
 
-// import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
-// func greet(name string)  {
-// 		fmt.Println("Hello:",name)
-// 	}
+func greet(name string)  {
+		fmt.Println("Hello:",name)
+	}
 
-// func add(a int, b int) int{
-// 	return a + b
-// }
+func add(a int, b int) int{
+	return a + b
+}
 
-// func divide(a, b int) (int, error) {
-//     if b == 0 {
-//         return 0, fmt.Errorf("❌ Cannot divide by zero")
-//     }
-//     return a / b, nil
-// }
+func divide(a, b int) (int, error) {
+    if b == 0 {
+        return 0, fmt.Errorf("❌ Cannot divide by zero")
+    }
+    return a / b, nil
+}
 
-// type User struct {
-// 	Name string
-// 	Age int
-// 	Location string
-// }
+type User struct {
+	Name string
+	Age int
+	Location string
+}
 
-// func (u User) Greet() {
-// 	fmt.Println(u.Name)
-// }
+func (u User) Greet() {
+	fmt.Println(u.Name)
+}
 
-// type Speaker interface {
-//     Speak()
-// }
+type Speaker interface {
+    Speak()
+}
 
-// func (u User) Speak() {
-//     fmt.Println("Hi, my name is", u.Name)
-// }
+func (u User) Speak() {
+    fmt.Println("Hi, my name is", u.Name)
+}
 
-// func main(){
-// 	fmt.Println("Hello,Go is working!")
+func printMessage(msg string){
+	for i :=1; i < 3; i++ {
+		fmt.Println(msg)
+		time.Sleep(time.Second)
+	}
+}
 
-// 	var name string = "Omer"
-//     var age int = 18
-//     height := 5.9  // short declaration
-//     isCoder := true
+func main(){
+	fmt.Println("Hello,Go is working!")
 
-//     fmt.Println("Name:", name)
-//     fmt.Println("Age:", age)
-//     fmt.Println("Height:", height)
-//     fmt.Println("Is a Coder:", isCoder)
+	var name string = "Omer"
+    var age int = 18
+    height := 5.9  // short declaration
+    isCoder := true
 
-// 	var a = 2
-// 	var b = 3
-// 	var sum = a + b
-// 	fmt.Println("sum:",sum)
+    fmt.Println("Name:", name)
+    fmt.Println("Age:", age)
+    fmt.Println("Height:", height)
+    fmt.Println("Is a Coder:", isCoder)
 
-// 	if age>= 18 {
-// 		fmt.Println("✅ You are an adult.")
-// 	}else {
-// 		fmt.Println("❌ You are a minor.")
-// 	}
+	var a = 2
+	var b = 3
+	var sum = a + b
+	fmt.Println("sum:",sum)
 
-// 	fmt.Println("🔢 Numbers from 1 to 5:")
-// 	for i :=1; i <= 5; i++ {
-// 		fmt.Println(i)
-// 	}
+	if age>= 18 {
+		fmt.Println("✅ You are an adult.")
+	}else {
+		fmt.Println("❌ You are a minor.")
+	}
 
-// 	for i :=1; i <=20; i++ {
-// 		if i%3 == 0 && i%5 == 0 {
-// 			fmt.Println("FizzBuzz")
-// 		}else if i%3 == 0 {
-// 			 fmt.Println("Fizz")
-// 		}else if i%5 == 0 {
-// 			fmt.Println("Buzz")
-// 		}else {
-// 			fmt.Println(1)
-// 		}
-// 	}
-// 	greet("omer")
-// 	greet("go devloper")
+	fmt.Println("🔢 Numbers from 1 to 5:")
+	for i :=1; i <= 5; i++ {
+		fmt.Println(i)
+	}
 
-// 	result := add(10,20)
-// 	fmt.Println("sum:",result)
+	for i :=1; i <=20; i++ {
+		if i%3 == 0 && i%5 == 0 {
+			fmt.Println("FizzBuzz")
+		}else if i%3 == 0 {
+			 fmt.Println("Fizz")
+		}else if i%5 == 0 {
+			fmt.Println("Buzz")
+		}else {
+			fmt.Println(1)
+		}
+	}
+	greet("omer")
+	greet("go devloper")
 
-// 	res, err :=  divide(10,0)
-// 	if err != nil {
-// 		fmt.Println("Error:",err)
-// 	}else {
-// 		fmt.Println("Result:",res)
-// 	}
+	result := add(10,20)
+	fmt.Println("sum:",result)
 
-// 	var nums [3]int = [3]int{10,20,30}
-// 	fmt.Println("Array:" ,nums)
-// 	fmt.Println("First Element of Array:",nums[0])
+	res, err :=  divide(10,0)
+	if err != nil {
+		fmt.Println("Error:",err)
+	}else {
+		fmt.Println("Result:",res)
+	}
 
-// 	numbers := []int{1,2,3,4,5}
-// 	numbers = append(numbers, 6)
+	var nums [3]int = [3]int{10,20,30}
+	fmt.Println("Array:" ,nums)
+	fmt.Println("First Element of Array:",nums[0])
+
+	numbers := []int{1,2,3,4,5}
+	numbers = append(numbers, 6)
 	
-// 	fmt.Println("slice:",numbers)
-// 	fmt.Println("length:",len(numbers))
+	fmt.Println("slice:",numbers)
+	fmt.Println("length:",len(numbers))
 
-// 	user := map[string]string{
-// 		"name":"omer",
-// 		"lang":"go",
-// 		"city":"hyderabad",
-// 	}
+	user := map[string]string{
+		"name":"omer",
+		"lang":"go",
+		"city":"hyderabad",
+	}
 
-// 	fmt.Println("User:",user)
-// 	fmt.Println("name:",user["name"])
+	fmt.Println("User:",user)
+	fmt.Println("name:",user["name"])
 
-// 	omer := User{
-// 		Name: "omer",
-// 		Age: 18,
-// 		Location: "Hyderabad",
-// 	}
-// 	fmt.Println(omer)
-// 	fmt.Println(omer.Age)
-// 	fmt.Println(omer.Name)
-// 	fmt.Println(omer.Location)
+	omer := User{
+		Name: "omer",
+		Age: 18,
+		Location: "Hyderabad",
+	}
+	fmt.Println(omer)
+	fmt.Println(omer.Age)
+	fmt.Println(omer.Name)
+	fmt.Println(omer.Location)
 
-// 	u := User{Name: "omer",Age: 18,Location: "HYD"}
-// 	u.Greet()
+	u := User{Name: "omer",Age: 18,Location: "HYD"}
+	u.Greet()
 
-// 	var s Speaker
-// 	s= User{Name: "omer ali"}
-// 	s.Speak()
-// }
+	var s Speaker
+	s= User{Name: "omer ali"}
+	s.Speak()
+
+	// go printMessage("👋 From Goroutine") // runs in background
+    printMessage("📢 From Main")
+}
