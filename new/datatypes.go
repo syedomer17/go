@@ -2,6 +2,8 @@ package main
 
 import "fmt"
 
+const load float32 = 12.11
+
 func main(){
 var s1 string 
 
@@ -54,4 +56,10 @@ var (
 )
 
 fmt.Println(h,i,j)
+
+// constants varibale can be declar inside or outside of the function 
+
+const pi = 3.14
+fmt.Println(pi)
+fmt.Println(load)
 }
