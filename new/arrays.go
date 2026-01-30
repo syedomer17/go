@@ -39,4 +39,38 @@ func main(){
 
 	fmt.Println(len(myarr3))
 
+	// go slicing and capacity of array
+
+	numbers := [6]int{10,11,12,13,14,15}
+
+	newNumber := numbers[2:4]
+
+	fmt.Printf("%v\n",numbers)
+	fmt.Println(newNumber)
+	fmt.Printf("%d\n",len(newNumber))
+	fmt.Printf("%d\n",cap(newNumber))
+
+	mySlice := make([]int,5,10)
+	fmt.Println(mySlice)
+	mySlice[0] = 100
+	mySlice[1] = 200
+	mySlice[2] = 300
+	mySlice[3] = 400
+	mySlice[4] = 500
+	// mySlice[5] = 600  // this will cause runtime error: index out of range
+	fmt.Println(mySlice)
+	fmt.Printf("Length: %d\n",len(mySlice))
+	fmt.Printf("Capacity: %d\n",cap(mySlice))
+
+
+	// append function to add elements to slice
+	mySlice2 := []int{1,2,3,4,5,6}
+	fmt.Println(mySlice2)
+	fmt.Printf("Length: %d\n",len(mySlice2))
+	fmt.Printf("Capacity: %d\n",cap(mySlice2))
+
+	mySlice3 := append(mySlice2, 20,21)
+	fmt.Println(mySlice3)
+	fmt.Printf("Length: %d\n",len(mySlice3))
+	fmt.Printf("Capacity: %d\n",cap(mySlice3))
 }
