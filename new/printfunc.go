@@ -16,4 +16,8 @@ func main(){
 	fmt.Println(i,j)
 	fmt.Printf("i has value: %v and type: %T\n",i,i)
 	fmt.Printf("j has value: %v and type: %T\n",j,j)
+
+	fmt.Printf("%#v\n",i)
+	fmt.Printf("%v\n",i)
+	fmt.Printf("%v%%\n",i)
 }
